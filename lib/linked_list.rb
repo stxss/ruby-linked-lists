@@ -23,6 +23,7 @@ class LinkedList
       end
       # Fill the last empty spot with a new node for the desired value
       tmp.next_node = Node.new(value)
+      p tmp
       # The new tail is equal to the last element of the list
       @tail = tmp.next_node
     end
@@ -41,11 +42,10 @@ class LinkedList
 
   # Method to return the total number of nodes in the list
   def size
-    node_check = ""
-    count = 1
-    node_check = head.next_node
-    until node_check.nil?
-      node_check = node_check.next_node
+    count = 0
+    current = @head
+    until current.nil?
+      current = current.next_node
       count += 1
     end
     count
@@ -53,6 +53,11 @@ class LinkedList
 
   # Method to return a node at a given index
   def at(index)
+    tmp = @head
+    index.times do
+      tmp = tmp.next_node
+    end
+    tmp.value
   end
 
   # Method to remove the last element from the list

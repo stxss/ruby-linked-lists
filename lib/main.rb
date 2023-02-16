@@ -20,24 +20,20 @@ p list.append("test4")
 p list
 puts "--------------------"
 
-p list.append("test5")
+p list.prepend("test5")
 p list
 puts "--------------------"
 
-p list.prepend("test6")
+p list.append("test6")
 p list
 puts "--------------------"
 
 p list.size
+puts "--------------------"
 
-# p list.head
-# p list
-
-# p list.tail
-# p list
-
-# p list.at(3)
-# p list
+p list.at(3)
+p list.at(4)
+puts "--------------------"
 
 # p list.pop
 # p list
