@@ -66,20 +66,31 @@ class LinkedList
   end
 
   # Method that returns true if the passed value is in the list, otherwise returns false
-  def contains?(value)
+  def contains?(value, intention = "contain")
     res = false
+    count = 1
     tmp = @head
     until tmp.next_node.nil?
       if tmp.next_node.value == value
         res = true
+        break
       end
       tmp = tmp.next_node
+      count += 1
     end
-    res
+
+    if intention == "contain"
+      res
+    elsif intention == "index"
+      count
+    end
   end
 
   # Method that returns the index of the node containing value, or nil if not found
   def find(value)
+    if contains?(value)
+      contains?(value, "index")
+    end
   end
 
   # Method to represent the list object as strings in a '( value ) -> ( value ) -> ( value ) -> nil' format

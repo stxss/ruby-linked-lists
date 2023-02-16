@@ -41,8 +41,8 @@ list.pop
 puts "checking if the list contains the value 23 (expected false): #{list.contains?(23)}"
 puts "checking if the list contains the value 45 (expected true): #{list.contains?(45)}"
 
-# p list.find(433)
-# p list
+p list.find("test2")
+p list.find(433)
 
 # p list.to_s
 # p list
