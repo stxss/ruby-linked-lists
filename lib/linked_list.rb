@@ -30,9 +30,11 @@ class LinkedList
 
   # Method to add a new node containing a value, to the start of thelist
   def prepend(value)
+    # If there is no elements in the list, insert the first one
     if @head.nil?
       @head = Node.new(value, @tail)
     else
+      # And if there are already elements present, the new head becomes a new node with the old head as it's next node
       @head = Node.new(value, @head)
     end
   end
@@ -40,7 +42,7 @@ class LinkedList
   # Method to return the total number of nodes in the list
   def size
     node_check = ""
-    count = 0
+    count = 1
     node_check = head.next_node
     until node_check.nil?
       node_check = node_check.next_node

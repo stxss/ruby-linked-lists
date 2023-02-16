@@ -27,7 +27,8 @@ puts "--------------------"
 p list.prepend("test6")
 p list
 puts "--------------------"
-# p list.size
+
+p list.size
 
 # p list.head
 # p list
