@@ -20,7 +20,6 @@ class LinkedList
       tmp = @head
       until tmp.next_node.nil?
         tmp = tmp.next_node
-        break
       end
       # Fill the last empty spot with a new node for the desired value
       tmp.next_node = Node.new(value)
@@ -31,8 +30,11 @@ class LinkedList
 
   # Method to add a new node containing a value, to the start of thelist
   def prepend(value)
-    @head = Node.new(value, @tail)
-    @tail = @head
+    if @head.nil?
+      @head = Node.new(value, @tail)
+    else
+      @head = Node.new(value, @head)
+    end
   end
 
   # Method to return the total number of nodes in the list

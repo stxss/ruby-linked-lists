@@ -22,11 +22,12 @@ puts "--------------------"
 
 p list.append("test5")
 p list
+puts "--------------------"
 
-# p list.prepend("test3")
-# p list
-
-p list.size
+p list.prepend("test6")
+p list
+puts "--------------------"
+# p list.size
 
 # p list.head
 # p list
