@@ -2,47 +2,44 @@ require_relative "node"
 require_relative "linked_list"
 
 list = LinkedList.new
-p list
-puts "--------------------"
-p list.append("test1")
-p list
-puts "--------------------"
 
-p list.append("test2")
-p list
-puts "--------------------"
+list.append("test1")
 
-p list.append("test3")
-p list
-puts "--------------------"
+list.append("test2")
 
-p list.append("test4")
-p list
-puts "--------------------"
+list.append("test3")
 
-p list.prepend("test5")
-p list
-puts "--------------------"
+list.append("test4")
 
-p list.append("test6")
-p list
-puts "--------------------"
+list.prepend("head")
 
-p list.size
-puts "--------------------"
+list.append(45)
 
+list.append("tail")
+
+p "list size is #{list.size}"
+puts "-------------------------"
+
+puts "list head is"
+p list.head
+puts "-------------------------"
+
+puts "list tail is"
+p list.tail
+puts "-------------------------"
+
+puts "node at index 3 is"
 p list.at(3)
+puts "-------------------------"
+
+puts "node at index 4 is"
 p list.at(4)
-puts "--------------------"
+puts "-------------------------"
 
-p list.pop
-p list
+list.pop
 
-# p list.contains?(23)
-# p list
-
-# p list.contains?(45)
-# p list
+puts "checking if the list contains the value 23 (expected false): #{list.contains?(23)}"
+puts "checking if the list contains the value 45 (expected true): #{list.contains?(45)}"
 
 # p list.find(433)
 # p list
