@@ -23,7 +23,6 @@ class LinkedList
       end
       # Fill the last empty spot with a new node for the desired value
       tmp.next_node = Node.new(value)
-      p tmp
       # The new tail is equal to the last element of the list
       @tail = tmp.next_node
     end
@@ -62,12 +61,21 @@ class LinkedList
 
   # Method to remove the last element from the list
   def pop
-    p at(size - 2).next_node = nil
+    at(size - 2).next_node = nil
     @tail = at(size - 1)
   end
 
   # Method that returns true if the passed value is in the list, otherwise returns false
   def contains?(value)
+    res = false
+    tmp = @head
+    until tmp.next_node.nil?
+      if tmp.next_node.value == value
+        res = true
+      end
+      tmp = tmp.next_node
+    end
+    res
   end
 
   # Method that returns the index of the node containing value, or nil if not found
