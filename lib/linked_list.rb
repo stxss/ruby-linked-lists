@@ -95,6 +95,12 @@ class LinkedList
 
   # Method to represent the list object as strings in a '( value ) -> ( value ) -> ( value ) -> nil' format
   def to_s
+    to_print = ""
+    size.times do |i|
+      puts i
+      to_print += "(#{at(i).value}) -> "
+    end
+    to_print += "nil"
   end
 
   # Extra credit part
