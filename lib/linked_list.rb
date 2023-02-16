@@ -57,11 +57,13 @@ class LinkedList
     index.times do
       tmp = tmp.next_node
     end
-    tmp.value
+    tmp
   end
 
   # Method to remove the last element from the list
   def pop
+    p at(size - 2).next_node = nil
+    @tail = at(size - 1)
   end
 
   # Method that returns true if the passed value is in the list, otherwise returns false

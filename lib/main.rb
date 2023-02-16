@@ -35,8 +35,8 @@ p list.at(3)
 p list.at(4)
 puts "--------------------"
 
-# p list.pop
-# p list
+p list.pop
+p list
 
 # p list.contains?(23)
 # p list
