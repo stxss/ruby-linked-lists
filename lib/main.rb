@@ -3,18 +3,30 @@ require_relative "linked_list"
 
 list = LinkedList.new
 p list
-
+puts "--------------------"
 p list.append("test1")
 p list
+puts "--------------------"
 
 p list.append("test2")
 p list
+puts "--------------------"
 
-p list.prepend("test3")
+p list.append("test3")
+p list
+puts "--------------------"
+
+p list.append("test4")
+p list
+puts "--------------------"
+
+p list.append("test5")
 p list
 
-# p list.size
+# p list.prepend("test3")
 # p list
+
+p list.size
 
 # p list.head
 # p list

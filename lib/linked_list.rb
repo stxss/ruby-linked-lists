@@ -13,21 +13,34 @@ class LinkedList
   # Method to add a new node containing a value, to the end of the list
   def append(value)
     if @head.nil?
-      @head = Node.new(value)
+      @head = prepend(value)
     else
-        @tail = Node.new(value)
-        @head.next_node = @tail
+      tmp = @head
+      until tmp.next_node.nil?
+        tmp = tmp.next_node
+        break
+      end
+      tmp.next_node = Node.new(value)
+      @tail = tmp.next_node
     end
   end
 
   # Method to add a new node containing a value, to the start of thelist
   def prepend(value)
-    @tail = @head
     @head = Node.new(value, @tail)
+    @tail = @head
   end
 
   # Method to return the total number of nodes in the list
   def size
+    node_check = ""
+    count = 0
+    node_check = head.next_node
+    until node_check.nil?
+      node_check = node_check.next_node
+      count += 1
+    end
+    count
   end
 
   # Method to return a node at a given index
