@@ -12,15 +12,19 @@ class LinkedList
 
   # Method to add a new node containing a value, to the end of the list
   def append(value)
+    # If the head is empty, prepend the first node of the linked list
     if @head.nil?
       @head = prepend(value)
     else
+      # If it is not empty, traverse the chain until there is a "next_node" spot that is empty, i.e ready to be filled
       tmp = @head
       until tmp.next_node.nil?
         tmp = tmp.next_node
         break
       end
+      # Fill the last empty spot with a new node for the desired value
       tmp.next_node = Node.new(value)
+      # The new tail is equal to the last element of the list
       @tail = tmp.next_node
     end
   end
