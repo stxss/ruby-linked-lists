@@ -55,3 +55,17 @@ p list.find(433)
 puts "-------------------------"
 
 puts list.to_s
+
+puts "-------------------------"
+
+list.insert_at("middle", list.size / 2)
+
+puts list.to_s
+
+puts "-------------------------"
+
+list.remove_at(list.size / 2)
+
+puts list.to_s
+
+puts "-------------------------"
